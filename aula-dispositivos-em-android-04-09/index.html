@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processador de Texto</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f2; /* Fundo rosa claro */
+            color: #ff69b4; /* Texto em rosa */
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff1493; /* Rosa mais escuro */
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        #inputString {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 300px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #ff69b4; /* Cor do botão */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff1493; /* Efeito hover */
+        }
+        #outputString {
+            font-size: 1.5rem;
+            color: #ff69b4;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌸 Olá, mundo 🌸</h1>
+    <p>Já me livrei da maldição! 🎉</p>
+
+    <!-- Adicionando um campo de entrada e um botão para processar o texto -->
+    <h1>💖 Processador de Texto 💖</h1>
+    <label for="inputString">Digite seu nome:</label>
+    <input type="text" id="inputString" placeholder="Digite sua frase aqui">
+    <br><br>
+    <button onclick="capitalizarPalavra()">Processar ✨</button>
+
+    <h2>Resultado</h2>
+    <p id="outputString"></p>
+
+    <script>
+        // Função para capitalizar palavras com mais de dois caracteres
+        function capitalizarPalavra() {
+            const identificador = document.getElementById("inputString").value;
+            const palavras = identificador.split(" "); // Divide o texto em palavras
+
+            const resultado = palavras.map(palavra => {
+                if (palavra.length > 2) {
+                    return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+                } else {
+                    return palavra;
+                }
+            });
+
+            document.getElementById("outputString").textContent = resultado.join(" ");
+        }
+
+        // Exibir alerta na página 
+        window.alert('Minha primeira mensagem 🌟');
+        // Botão de sim ou não
+        window.confirm('Está gostando de JS? 💻');
+        // Pergunta 
+        window.prompt('Qual é o seu nome? 🌷');
+    </script>
+
+</body>
+</html>
