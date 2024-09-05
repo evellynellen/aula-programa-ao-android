@@ -1,55 +1,29 @@
-# aula-programacao-android
+# Processador de Texto
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 – Estrutura básica</title>
-    <style>
-        body {
-            background-color: rgb(105, 105, 173);
-            color: white;
-            font: normal 20pt Arial;
-        }
-    </style>
-</head>
-<body>
+Este  é um simples **processador de texto** que capitaliza palavras com mais de dois caracteres. A interface foi projetada com um visual limpo. utilizando tons de rosa e um estilo agradável, criando uma experiência intuitiva para o usuário.
 
-    <h1>Olá, mundo</h1>
-    <p>Já me livrei da maldição</p>
+## Funcionalidades
+- Capitalização automática de palavras com mais de dois caracteres.
+- Exibição do resultado processado diretamente na página.
+- Alertas interativos com perguntas e confirmações para o usuário.
 
-    <!-- Adicionando um campo de entrada e um botão para processar o texto -->
-    <h1>Processador de Texto</h1>
-    <label for="inputString">Digite seu texto:</label>
-    <input type="text" id="inputString" placeholder="Digite sua frase aqui">
-    <button onclick="capitalizarPalavra()">Processar</button>
-    <h2>Resultado</h2>
-    <p id="outputString"></p>
+## Tecnologias Utilizadas
+- **HTML**: Estruturação da página.
+- **CSS**: Estilização da interface para um visual agradável.
+- **JavaScript**: Funções para manipular o texto digitado, utilizando métodos de manipulação de strings.
 
-    <script>
-        // Função para capitalizar palavras com mais de dois caracteres
-        function capitalizarPalavra() {
-            const identificador = document.getElementById("inputString").value;
-            const palavras = identificador.split(" "); // Divide o texto em palavras
+## Como funciona?
+1. O usuário digita seu no campo de entrada.
+2. Ao clicar no botão “Processar”, o JavaScript analisa o texto e capitaliza palavras com mais de dois caracteres.
+3. O resultado é exibido logo abaixo no campo “Resultado”.
 
-            const resultado = palavras.map(palavra => {
-                if (palavra.length > 2) {
-                    return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
-                } else {
-                    return palavra;
-                }
-            });
+### Funcionalidades Extras
+- Ao carregar a página, são exibidas três mensagens de interação: uma de alerta, uma de confirmação e uma pergunta pedindo o nome do usuário.
+- A interface responde a interações com animações sutis, como o efeito de hover no botão.
 
-            document.getElementById("outputString").textContent = resultado.join(" ");
-        }
+## Exemplo de Uso
+- Entrada: `evellyn`
+- Saída: `Evellyn`
 
-        // Exibir alerta na página 
-        window.alert('Minha primeira mensagem');
-        // Botão de sim ou não
-        window.confirm('Está gostando de JS?');
-        // Pergunta 
-        window.prompt('Qual é o seu nome?');
-    </script>
-</body>
-</html>
+## Aula de Programação para Dispositivos Móveis
+Este código foi desenvolvido como parte da **aula de Programação para Dispositivos Móveis**. O objetivo era praticar conceitos de manipulação de strings em JavaScript, além de criar uma interface simples e responsiva utilizando HTML e CSS.
